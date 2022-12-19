@@ -1,0 +1,36 @@
+<form [formGroup]="loginForm" class="ion-margin">
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="DNI" type="number" placeholder="DNI"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-icon
+        [name]="type ? 'eye' : 'eye-off'"
+        slot="end"
+        color="dark"
+        (click)="changeType()">
+      </ion-icon>
+      <ion-input formControlName="Contrasena" [type]="type ? 'password' : 'text'"
+        placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+  </div>
+</form>
+
+<p class="ion-text-right ion-margin-horizontal">
+  <ion-text color="medium">Olvidó su contraseña?</ion-text>
+</p>
+
+<div class="ion-margin-horizontal">
+  <ion-button
+    (click)="login()"
+   class="ion-margin-horizontal"
+    size="large"
+    expand="block"
+    shape="round"
+    color="primary">
+    <ion-text>Ingresar</ion-text>
+  </ion-button>
+</div>

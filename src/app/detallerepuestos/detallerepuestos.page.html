@@ -1,0 +1,45 @@
+<body>
+<div class="card">
+  <div class="image">
+    <ion-img src="../../assets/REPUESTOS/{{foto}}.png"></ion-img>
+  </div>
+  <br><br>
+
+  <div class="container" >
+    <h5 class="label"><strong>Nombre:</strong></h5>
+    <h5 class="Detalle">{{ nombre }}</h5>
+  </div>
+  <div class="container" >
+    <h5 class="label"><strong>Marca:</strong></h5>
+    <h5 class="Detalle">{{ marca }}</h5>
+  </div>
+  <div class="container" >
+    <h5 class="label"><strong>Modelo:</strong></h5>
+    <h5 class="Detalle">{{ modelo }}</h5>
+  </div>
+  <div class="container" >
+    <h5 class="label"><strong>Precio:</strong></h5>
+    <h5 class="Detalle"><sup>S/.</sup>{{ precioVenta|number:'1.2' }}</h5>
+  </div>
+  <div class="container" >
+    <h5 class="label"><strong>Stock:</strong></h5>
+    <h5 class="Detalle">{{ STOCK }}</h5>
+  </div>
+  <div class="container2">
+    <div id="ver">
+      <ion-button class="btn btn-ver" routerLink="/tab/repuestos" >Atras</ion-button>
+    </div>
+
+    <div>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+<style>
+  body{
+    background-image: url("./assets/icon/Fondos/FondoIniciarSesion.png");
+  }
+</style>

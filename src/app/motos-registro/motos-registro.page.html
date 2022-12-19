@@ -1,0 +1,94 @@
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>SpeedRider</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div (click)="navigateListado()" class="ion-activatable ripple-parent">
+      <ion-icon name="people-circle-outline"></ion-icon>
+      Listado Registro
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div (click)="navigateMotosRegistro()" class="ion-activatable ripple-parent">
+      <ion-icon  name="cog-sharp" heigth="50px"></ion-icon>
+      Registro Motos
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div (click)="navigateRepuestosRegistro()"  class="ion-activatable ripple-parent">
+      <ion-icon  name="cog-sharp" heigth="50px"></ion-icon>
+      Registro Repuestos
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+
+  </ion-content>
+
+  <div  (click)="navigateLogin()" class="ion-activatable ripple-parent">
+    <ion-icon name="power-sharp"> </ion-icon>
+    Salir
+    <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+  </div>
+</ion-menu>
+<div class="pagina1">
+
+  <div class="ion-page" id="main-content">
+
+    <ion-toolbar>
+      <br>
+      <ion-buttons slot="start">
+        <br>
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-content class="ion-padding">
+
+      <h1 align="center"><strong>{{motoService.motoSelected ? 'Editar Motos' : 'Registrar Motos'}}</strong> </h1>
+      <form [formGroup]="registro" >
+        <ion-item>
+          <ion-label position="floating">Categoría:</ion-label>
+          <ion-input  formControlName="categoria"  type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Marca:</ion-label>
+          <ion-input  formControlName="marca"  type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Modelo: </ion-label>
+          <ion-input  formControlName="modelo"  type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Color:</ion-label>
+          <ion-input  formControlName="color"  type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Precio Compra:</ion-label>
+          <ion-input formControlName="precioCompra" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Precio Venta</ion-label>
+          <ion-input formControlName="precioVenta" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Garantia:</ion-label>
+          <ion-input  formControlName="garantia" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Stock:</ion-label>
+          <ion-input  formControlName="STOCK" type="number"></ion-input>
+        </ion-item>
+        <ion-button (click)="navigateListadoMotos()">Atras</ion-button>
+        <ion-button (click)="saveCliente()">Guardar</ion-button>
+      </form>
+
+    </ion-content>
+  </div>
+</div>
+<style>
+  .pagina1{
+    background-image: url("assets/icon/Fondos/FondoIniciarSesion.png");
+    color:white
+  }
+</style>
+
+

@@ -1,0 +1,85 @@
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>SpeedRider</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div (click)="navigateListado()" class="ion-activatable ripple-parent">
+      <ion-icon name="people-circle-outline"></ion-icon>
+      Listado Registro
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div (click)="navigateListadoMotos()" class="ion-activatable ripple-parent">
+      <ion-icon  name="cog-sharp" heigth="50px"></ion-icon>
+      Listado Motos
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div (click)="navigateRepuestosRegistro()"  class="ion-activatable ripple-parent">
+      <ion-icon  name="cog-sharp" heigth="50px"></ion-icon>
+      Registro Repuestos
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+
+  </ion-content>
+
+  <div  (click)="navigateLogin()" class="ion-activatable ripple-parent">
+    <ion-icon name="power-sharp"> </ion-icon>
+    Salir
+    <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+  </div>
+</ion-menu>
+<div class="pagina1">
+  <div class="ion-page" id="main-content">
+
+    <ion-toolbar>
+      <br>
+      <ion-buttons slot="start">
+        <br>
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-searchbar placeholder="Buscar..." animated (ionChange) ="searchCustomer($event)"></ion-searchbar>
+
+
+    </ion-toolbar>
+
+    <ion-content class="ion-padding">
+      <ion-button left="10px" (click)="navigateVendedorForm()">
+        <ion-icon name="add-circle-sharp"></ion-icon>
+        Nuevo
+      </ion-button>
+      <ion-button right="-10px" (click)="Refrescar()">
+        <ion-icon size="50px" name="refresh-circle-sharp"></ion-icon>
+        Refresh
+      </ion-button>
+      <section class="container">
+        <ion-item *ngFor="let vendedor of searchVendedor">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-thumbnail>
+          <ion-label>
+            {{vendedor.Nombre}} {{vendedor.ApellidoPaterno}} {{vendedor.ApellidoMaterno}}
+          </ion-label>
+          <div>
+            <br>
+          <p>Rol: {{vendedor.Rol}}</p>
+            <p>Estado: {{vendedor.Estado}}</p>
+          </div>
+
+        </ion-item>
+
+      </section>
+
+    </ion-content>
+  </div>
+</div>
+<style>
+  .pagina1{
+    background-image: url("assets/icon/Fondos/FondoIniciarSesion.png");
+    color:white
+  }
+</style>
+
+
+

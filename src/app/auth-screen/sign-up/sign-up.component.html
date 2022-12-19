@@ -1,0 +1,58 @@
+<form [formGroup]="registro"  class="ion-margin">
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="DNI"  type="number" placeholder="DNI"></ion-input>
+    </ion-item>
+
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="Nombre" type="text" placeholder="Nombre"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="ApellidoPaterno" type="text" placeholder="Apellido Paterno"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="ApellidoMaterno" type="text" placeholder="Apellido Materno"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="Celular" type="text" placeholder="Celular"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="Email" type="text" placeholder="Email"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-icon
+        [name]="type ? 'eye' : 'eye-off'"
+        slot="end"
+        color="dark"
+        (click)="changeType()">
+      </ion-icon>
+      <ion-input formControlName="Contrasena" [type]="type ? 'password' : 'text'"
+        placeholder="Enter password"></ion-input>
+    </ion-item>
+
+  </div>
+</form>
+
+<div class="ion-margin-horizontal">
+  <ion-button
+    (click)="saveCliente()"
+    size="large"
+    expand="block"
+    shape="round"
+    color="primary">
+
+    <ion-text >Crear</ion-text>
+  </ion-button>
+</div>

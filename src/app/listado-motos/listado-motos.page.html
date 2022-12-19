@@ -1,0 +1,66 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>SpeedRider</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div (click)="navigateListado()" class="ion-activatable ripple-parent">
+      <ion-icon name="people-circle-outline"></ion-icon>
+      Listado Registro
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div (click)="navigateListadoMotos()" class="ion-activatable ripple-parent">
+      <ion-icon  name="cog-sharp" heigth="50px"></ion-icon>
+      Listado Motos
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+    <div (click)="navigateRepuestosRegistro()"  class="ion-activatable ripple-parent">
+      <ion-icon  name="cog-sharp" heigth="50px"></ion-icon>
+      Registro Repuestos
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+
+  </ion-content>
+
+  <div  (click)="navigateLogin()" class="ion-activatable ripple-parent">
+    <ion-icon name="power-sharp"> </ion-icon>
+    Salir
+    <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+  </div>
+</ion-menu>
+<div class="pagina1">
+  <div class="ion-page" id="main-content">
+
+    <ion-toolbar>
+      <br>
+      <ion-buttons slot="start">
+        <br>
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-searchbar placeholder="Buscar..." animated (ionChange) ="searchCustomer($event)"></ion-searchbar>
+
+
+    </ion-toolbar>
+
+    <ion-content class="ion-padding">
+      <div class="blog-card" *ngFor="let motos of motos">
+        <div class="meta">
+          <div class="photo" style="background-image: url(../../assets/MOTOS/{{motos.foto}}.png)"></div>
+
+        </div>
+        <div class="description">
+          <h1>{{motos.modelo}} {{motos.color}}</h1>
+          <h2>{{motos.categoria}} {{motos.marca}}</h2>
+          <p>Precio Compra: <sup>S/.</sup>{{motos.precioCompra|number:'1.2'}}</p>
+          <p>Precio Venta: <sup>S/.</sup>{{motos.precioVenta|number:'1.2'}}</p>
+          <p>{{motos.descripcion}}</p>
+          <p class="read-more">
+            <ion-button (click)="editarMoto(motos)">Modificar</ion-button>
+            <ion-button (click)="eliminarMoto(motos.id)">Eliminar</ion-button>
+          </p>
+        </div>
+      </div>
+    </ion-content>
+  </div>
+</div>

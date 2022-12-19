@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 align="center"><strong>REGISTRO VENDEDOR</strong> </h1>
+  <form [formGroup]="registro">
+  <ion-item>
+    <ion-label position="floating">DNI</ion-label>
+    <ion-input formControlName="DNI"  type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nombres:</ion-label>
+    <ion-input formControlName="Nombre"  type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Apellido Paterno</ion-label>
+    <ion-input formControlName="ApellidoPaterno"  type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Apellido Materno</ion-label>
+    <ion-input formControlName="ApellidoMaterno"  type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Celular</ion-label>
+  <ion-input formControlName="Celular"  type="number"></ion-input>
+</ion-item>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input  formControlName="Email" type="email"></ion-input>
+    <ion-note slot="helper">Enter a valid email</ion-note>
+    <ion-note slot="error">Invalid email</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Confirmar Contraseña</ion-label>
+    <ion-input formControlName="Contrasena"  type="password"></ion-input>
+  </ion-item>
+  </form>
+</ion-content>

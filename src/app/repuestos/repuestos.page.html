@@ -1,0 +1,28 @@
+<ion-content>
+  <div align="center">
+    <img src="../../assets/icon/logoAzul.png" width="150px" />
+    <br>
+    <button class="logo"  routerLink="/auth-screen">
+      <ion-icon name="logut-sharp"></ion-icon>
+      Salir
+    </button>
+  </div>
+
+
+  <ion-searchbar placeholder="Buscar..." animated (ionChange) ="searchCustomer($event)"></ion-searchbar>
+  <br>
+  <div class="food-list">
+    <div  [routerLink]="['/detallerepuestos',repuesto.id]"  class="card" *ngFor="let repuesto of searchRepuestos">
+      <ion-img src="../../assets/REPUESTOS/{{repuesto.foto}}.png"></ion-img>
+      <div class="card-content">
+        <p>{{repuesto.nombre}}</p>
+        <h2 class="subtitle"><sup>S/.</sup>{{repuesto.precioVenta|number:'1.2'}}</h2>
+        <ion-buttons>
+          <ion-icon slot="icon-only" name="eye-sharp"></ion-icon>
+          Ver
+        </ion-buttons>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

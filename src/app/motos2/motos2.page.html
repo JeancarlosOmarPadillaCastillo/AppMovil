@@ -1,0 +1,38 @@
+<ion-content>
+  <div align="center">
+    <img src="../../assets/icon/logoAzul.png" width="150px" />
+    <br>
+    <button class="logo" routerLink="/auth-screen" >
+      <ion-icon name="log-out-sharp"></ion-icon>
+      Salir
+    </button>
+  </div>
+  <ion-searchbar placeholder="Buscar..." animated (ionChange) ="searchCustomer($event)"></ion-searchbar>
+<br>
+  <div class="food-list">
+    <div [routerLink]="['/detallemotos',moto.id]"  class="card" *ngFor="let moto of searchMotos">
+      <div class="img">
+        <ion-img class="img" src="../../assets/MOTOS/{{moto.foto}}.png"></ion-img>
+      </div>
+
+      <div class="card-content">
+        <p>{{moto.categoria}}</p>
+        <h3 class="subtitle"><sup>S/.</sup>{{moto.precioVenta|number:'1.2'}}</h3>
+        <ion-buttons>
+          <ion-icon slot="icon-only" name="eye-sharp"></ion-icon>
+          Añadir
+        </ion-buttons>
+      </div>
+    </div>
+
+</div>
+</ion-content>
+<style>
+  ion-button{
+    height: 60px;
+    width: 60px;
+  ion-icon{
+    font-size: 2rem;
+  }
+  }
+</style>
